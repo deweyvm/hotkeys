@@ -152,14 +152,14 @@ Return
 
 $*m::
     If ModeEnabled
-        Send {Blind}{Backspace}
+        Send {Blind}{Enter}
     Else
         Send {Blind}m
 Return
 
 $n::
     If ModeEnabled
-        Return
+        Send {Blind}{Backspace}
     Else
         Send {Blind}k
 Return
@@ -270,9 +270,19 @@ ToggleMode(ModeEnabled)
     }
 }
 
+$*Up::
+    SoundBeep 500
+Return
+
+$*Down::
+    SoundBeep 500
+Return
+
 $`::
     ModeEnabled := ToggleMode(ModeEnabled)
 Return
+
+
 
 Capslock::RControl
 
