@@ -59,6 +59,13 @@ ModeEnabled := false
 ;.::.
 ;/::/
 
+$*1::
+    If ModeEnabled
+        Send {Blind}``
+    Else
+        Send {Blind}1
+Return
+
 $*a::
     If ModeEnabled
         Return
@@ -240,21 +247,6 @@ $*z::
         Send {Blind}z
 Return
 
-$+Space::
-    Send {Tab}
-Return
-
-
-
-
-
-
-
-
-
-
-
-
 $*`;::
     If ModeEnabled
         Send {Blind}{End}
@@ -262,23 +254,24 @@ $*`;::
         Send {Blind}o
 Return
 
-
-
-$Tab::
+ToggleMode(ModeEnabled)
+{
     If ModeEnabled
     {
-        Menu, Tray, Icon, C:/Users/M/Desktop/icon1.ico
-        ModeEnabled := false
+        Menu, Tray, Icon, icon1.ico
+        SoundPlay beep.wav
+        Return false
     }
     Else
     {
-        Menu, Tray, Icon, C:/Users/M/Desktop/icon2.ico
-        ModeEnabled := true
+        Menu, Tray, Icon, icon2.ico
+        SoundPlay boop.wav
+        Return true
     }
-Return
+}
 
-LControl::
-    SoundBeep
+$`::
+    ModeEnabled := ToggleMode(ModeEnabled)
 Return
 
 Capslock::RControl
