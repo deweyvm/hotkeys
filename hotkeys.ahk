@@ -3,22 +3,8 @@
 SendMode Input
 SetTitleMatchMode 2
 
-;`::`
-;1::1
-;2::2
-;3::3
-;4::4
-;5::5
-;6::6
-;7::7
-;8::8
-;9::9
-;0::0
-;-::-
-;=::=
 
-;q::q
-;w::w
+
 e::f
 r::p
 t::g
@@ -27,44 +13,28 @@ u::l
 i::u
 o::y
 p::`;
-;[::[
-;]::]
-;\::\
 
-;a::a
 s::r
 d::s
 f::t
 g::d
-;h::h
 j::n
 k::e
 l::i
 `;::o
-;'::'
 
-;z::z
-;x::x
-;c::c
-;v::v
-;b::b
+
 n::k
-;m::m
-;,::,
-;.::.
-;/::/
 
+ModeEnabled := false
 
 LControl::
-SoundBeep
-return
+    SoundBeep
+    Return
 
 Capslock::RControl
 
-
-
 SetKeyDelay 0, 10
-
 Pause::
     Suspend,Toggle
     Return
