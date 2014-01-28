@@ -152,12 +152,12 @@ Return
 
 $*m::
     If ModeEnabled
-        Send {Blind}{Enter}
+        Send {Blind}{Delete}
     Else
         Send {Blind}m
 Return
 
-$n::
+$*n::
     If ModeEnabled
         Send {Blind}{Backspace}
     Else
@@ -166,7 +166,7 @@ Return
 
 $*o::
     If ModeEnabled
-        Send {Blind}^{Right}
+        Send {Blind}^y
     Else
         Send {Blind}y
 Return
@@ -207,14 +207,14 @@ Return
 
 $*u::
     If ModeEnabled
-        Send {Blind}^{Left}
+        Send {Blind}{Enter}
     Else
         Send {Blind}l
 Return
 
 $*v::
     If ModeEnabled
-        Return
+        Send {Blind}^v
     Else
         Send {Blind}v
 Return
@@ -228,7 +228,7 @@ Return
 
 $*x::
     If ModeEnabled
-        Return
+        Send {Blind}^x
     Else
         Send {Blind}x
 Return
@@ -242,7 +242,7 @@ Return
 
 $*z::
     If ModeEnabled
-        Return
+        Send {Blind}^z
     Else
         Send {Blind}z
 Return
@@ -276,6 +276,21 @@ Return
 
 $*Down::
     SoundBeep 500
+Return
+
+$*Left::
+    SoundBeep 500
+Return
+
+$*Right::
+    SoundBeep 500
+Return
+
+$*Backspace::
+    If ModeEnabled
+        SoundBeep 500
+    Else
+        Send {Blind}{Backspace}
 Return
 
 $`::
