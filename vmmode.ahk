@@ -286,12 +286,12 @@ $*Right::
     SoundBeep 500
 Return
 
-$*Backspace::
-    If ModeEnabled
-        SoundBeep 500
-    Else
-        Send {Blind}{Backspace}
-Return
+;$*Backspace::
+;    If ModeEnabled
+;        SoundBeep 500
+;    Else
+;        Send {Blind}{Backspace}
+;Return
 
 $`::
     ModeEnabled := ToggleMode(ModeEnabled)
