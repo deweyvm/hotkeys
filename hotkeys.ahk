@@ -23,6 +23,8 @@ $`;::o
 $n::k
 
 LControl & n::Send {Backspace}
+LControl & m::Send {Delete}
+
 LControl & j::
     GetKeyState,state,Shift
     If state = D
@@ -87,6 +89,13 @@ LControl & `;::
         Send {End}
 Return
 
+LControl & +::
+    Send {Raw}=>
+Return
+
+LControl & -::
+    Send {Raw}->
+Return
 
 LControl & y::
     GetKeyState,state,Shift
@@ -112,63 +121,6 @@ F6::
     }
     Return
 
-;^$F5::
-;    IfWinActive Mozilla Firefox
-;    {
-;        Send ^{F5}
-;    }
-;    else
-;    {
-;
-;        IfWinExist TEST
-;        {
-;            WinActivate, TEST
-;            SendInput {Raw}cd /cygdrive/c/Users/M/Desktop && sh run-test.sh
-;            Send {Enter}
-;            IfWinExist Sublime Text 2
-;            {
-;                WinActivate, Sublime Text 2
-;            }
-;        }
-;
-;    }
-;    Return
-
-$F5::
-    IfWinActive Mozilla Firefox
-    {
-        Send ^{F5}
-    }
-    else
-    {
-        IfWinActive IntelliJ IDEA
-        {
-            Send {F5}
-        }
-        else
-        {
-        IfWinExist TEST
-            {
-                GetKeyState, state, Control
-                If state = D
-                {
-                    WinActivate, TEST
-                    SendInput {Raw}cd /cygdrive/c/Users/M/Desktop && sh run-test.sh
-                    Send {Enter}
-                    IfWinExist Sublime Text 2
-                    {
-                        WinActivate, Sublime Text 2
-                    }
-                }
-                else
-                {
-                    WinActivate, TEST
-                }
-
-            }
-        }
-    }
-    Return
 
 F4::
     IfWinExist Sublime Text 2
