@@ -97,6 +97,10 @@ LControl & -::
     Send {Raw}->
 Return
 
+LControl & ,::
+    Send {Raw}<-
+Return
+
 LControl & y::
     GetKeyState,state,Shift
     If state = D
