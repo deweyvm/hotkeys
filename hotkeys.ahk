@@ -101,12 +101,48 @@ LControl & ,::
     Send {Raw}<-
 Return
 
-LControl & y::
+LControl & .::
+    Send {Raw}=>
+Return
+
+LControl & 4::
+    Send {Raw}<$>
+Return
+
+LControl & =::
+    Send {Raw}<+>
+Return
+
+LControl & |::
+    Send {Raw}<|>
+Return
+
+LControl & *::
+    Send {Raw}<*>
+Return
+
+Enter & Space::
     GetKeyState,state,Shift
     If state = D
         Send +{Enter}
     Else
         Send {Enter}
+Return
+
+Enter & f::
+    Send {Raw}}
+Return
+
+Enter & d::
+    Send {Raw}{
+Return
+
+Enter & s::
+    Send {Raw}=
+Return
+
+LControl & Space::
+    Send {Enter}
 Return
 
 ModeEnabled := false
